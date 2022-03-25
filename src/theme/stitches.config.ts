@@ -12,12 +12,16 @@ export const {
 } = createStitches({
   theme: {
     colors: {
-      gray400: 'gainsboro',
-      gray500: 'lightgray',
+      primary: '#7c5dfa',
+      primaryLight: '#9277ff',
+      
+      background: '#141625',
+      surface: '#1e2139',
+      floating: '#252945'
     },
   },
   media: {
-    menuBq: '(min-width: 900px)',
+    '900bp': '(min-width: 900px)',
   },
   utils: {
     marginX: (value: any) => ({ marginLeft: value, marginRight: value }),

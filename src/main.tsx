@@ -1,7 +1,7 @@
 import App from './App';
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { globalCss } from './stitches.config';
+import { globalCss } from './theme/stitches.config';
 
 const css = globalCss({
   'body': {

@@ -1,4 +1,5 @@
-import { styled } from '../../stitches.config';
+import { styled } from '../../theme/stitches.config';
+import logo from '../../assets/logo.svg';
 
 const Container = styled('div', {
   top: 0,
@@ -7,18 +8,50 @@ const Container = styled('div', {
   display: 'flex',
   position: 'sticky',
   alignItems: 'center',
-  background: 'rgb(30, 33, 57)',
-  '@menuBq': {
-    width: '7rem',
+  background: '$surface',
+  '@900bp': {
+    width: '6rem',
     height: '100vh',
+    borderRadius: '0 20px 20px 0'
   }
+});
+
+const Logo = styled('div', {
+  background: '$primary',
+  position: 'relative',
+  width: '5rem',
+  height: '5rem',
+  display: 'flex',
+  alignSelf: 'start',
+  alignItems: 'center',
+  justifyContent: 'center',
+  borderRadius: '0 20px 20px 0',
+  '&:after': {
+    content: '',
+    width: '100%',
+    height: '50%',
+    borderRadius: '20px 0',
+    position: 'absolute',
+    bottom: 0,
+    background: '$primaryLight'
+  },
+  '@900bp': {
+    width: '6rem',
+    height: '6rem',
+  }
+});
+
+const Svg = styled('img', {
+  zIndex: 1,
+  width: '2em',
+  height: '2em'
 });
 
 function Header() {
   
   return (
     <Container>
-      <div>Hello, I'm the header component</div>
+      <Logo> <Svg src={logo} /> </Logo>
     </Container>
   )
 }
