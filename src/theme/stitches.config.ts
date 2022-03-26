@@ -19,6 +19,11 @@ export const {
       surface: '#1e2139',
       floating: '#252945'
     },
+    space: {
+      sm: '2rem',
+      md: '4rem',
+      lg: '6rem'
+    }
   },
   media: {
     '900bp': '(min-width: 900px)',
