@@ -10,9 +10,11 @@ const Container = styled('div', {
   position: 'sticky',
   alignItems: 'center',
   background: '$surface',
+  justifyContent: 'space-between',
   '@900bp': {
     width: '6rem',
     height: '100vh',
+    flexDirection: 'column',
     borderRadius: '0 20px 20px 0'
   }
 });
