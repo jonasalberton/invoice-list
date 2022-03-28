@@ -1,5 +1,6 @@
 import { styled } from '../../theme/stitches.config';
 import logo from '../../assets/logo.svg';
+import ThemeSwitcher from '../ThemeSwitcher';
 
 const Container = styled('div', {
   top: 0,
@@ -52,6 +53,7 @@ function Header() {
   return (
     <Container>
       <Logo> <Svg src={logo} /> </Logo>
+      <ThemeSwitcher />
     </Container>
   )
 }

@@ -1,7 +1,7 @@
 import { styled } from '../../theme/stitches.config';
 
 const Container = styled('div', {
-	background: '$floating',
+	background: '$surface',
 	padding: '20px',
 	'&:hover': {
 		border: '1px solid $primary'

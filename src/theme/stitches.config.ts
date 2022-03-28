@@ -23,6 +23,9 @@ export const {
       sm: '2rem',
       md: '4rem',
       lg: '6rem'
+    },
+    radii: {
+      circle: '50%'
     }
   },
   media: {
