@@ -1,7 +1,9 @@
-import { useState } from 'react';
 import sun from '../../assets/sun.svg';
 import moon from '../../assets/moon.svg'
+import { RootState } from '../../redux/Store';
 import { styled } from '../../theme/stitches.config';
+import { useSelector, useDispatch } from 'react-redux'
+import { toggleTheme } from '../../redux/Reducers/ThemeReducer';
 
 const Button = styled('button', {
   border: 'none',
@@ -18,17 +20,16 @@ const Button = styled('button', {
 })
 
 function ThemeSwitcher() {
-  const [theme, setTheme] = useState(sun);
+  const theme = useSelector((state: RootState) => state.theme.value);
+  const dispatch = useDispatch();
 
   const onChange = () => {
-    setTheme( current => {
-      return current === sun ? moon : sun;
-    })
+    dispatch(toggleTheme());
   }
   
   return (
     <Button onClick={onChange}>
-      <img src={theme} alt="Theme switcher" />
+      <img src={theme == 'dark' ? moon : sun} alt="Theme switcher" />
     </Button>
   );
 }

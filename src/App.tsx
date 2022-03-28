@@ -1,6 +1,8 @@
-import { styled } from './theme/stitches.config';
-import Header from './components/Header';
 import Card from './components/Card';
+import Header from './components/Header';
+import { styled } from './theme/stitches.config';
+import { RootState, store } from './redux/Store';
+import { Provider, useSelector } from 'react-redux';
 
 const Container = styled('div', {
   display: 'flex',
@@ -13,22 +15,26 @@ const Container = styled('div', {
 });
 
 const Body = styled('div', {
-  display: 'flex',
   flex: '1',
   padding: '$sm',
+  display: 'flex',
   '@900bp': {
     padding: '$md'
   }
 });
 
+
 function App() {
+
   return (
-    <Container>
-      <Header />
-      <Body>
-        <Card />
-      </Body>
-    </Container>
+    <Provider store={store}>
+      <Container>
+        <Header />
+        <Body>
+          <Card />
+        </Body>
+      </Container>
+    </Provider>
   )
 }
 
