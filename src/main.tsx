@@ -1,6 +1,8 @@
 import App from './App';
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { store } from './redux/Store';
+import { Provider } from 'react-redux';
 import { globalCss } from './theme/stitches.config';
 
 const css = globalCss({
@@ -16,8 +18,10 @@ const css = globalCss({
 
 ReactDOM.render(
   <React.StrictMode>
-    <App />
-    {css()}
+    <Provider store={store}>
+      <App />
+      {css()}
+    </Provider>
   </React.StrictMode>,
   document.getElementById('root')
 )

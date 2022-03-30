@@ -1,6 +1,6 @@
-import { styled } from '../../theme/stitches.config';
 import logo from '../../assets/logo.svg';
 import ThemeSwitcher from '../ThemeSwitcher';
+import { styled } from '../../theme/stitches.config';
 
 const Container = styled('div', {
   top: 0,

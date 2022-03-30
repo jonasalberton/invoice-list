@@ -1,4 +1,5 @@
 import { createStitches } from '@stitches/react';
+import { ThemeColors } from '../models/ThemeColors';
 
 export const {
   styled,
@@ -12,12 +13,7 @@ export const {
 } = createStitches({
   theme: {
     colors: {
-      primary: '#7c5dfa',
-      primaryLight: '#9277ff',
-      
-      background: '#141625',
-      surface: '#1e2139',
-      floating: '#252945'
+      ...{} as ThemeColors
     },
     space: {
       sm: '2rem',
