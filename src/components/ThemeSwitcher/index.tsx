@@ -2,7 +2,7 @@ import sun from '../../assets/sun.svg';
 import moon from '../../assets/moon.svg'
 import { RootState } from '../../redux/Store';
 import { styled } from '../../theme/stitches.config';
-import { useSelector, useDispatch } from 'react-redux'
+import { useSelector, useDispatch } from 'react-redux';
 import { toggleTheme } from '../../redux/Reducers/ThemeReducer';
 
 const Button = styled('button', {
@@ -13,6 +13,10 @@ const Button = styled('button', {
   width: '30px',
   height: '30px',
   borderRadius: '$circle',
+  display: 'flex',
+  justifyContent: 'center',
+  alignItems: 'center',
+  margin: '$xs',
   background: 'none',
   '&:hover': {
     opacity: '.8'

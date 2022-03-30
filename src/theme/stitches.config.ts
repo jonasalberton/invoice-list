@@ -16,6 +16,7 @@ export const {
       ...{} as ThemeColors
     },
     space: {
+      xs: '1rem',
       sm: '2rem',
       md: '4rem',
       lg: '6rem'
