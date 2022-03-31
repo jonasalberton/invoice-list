@@ -6,18 +6,15 @@ import { useSelector, useDispatch } from 'react-redux';
 import { toggleTheme } from '../../redux/Reducers/ThemeReducer';
 
 const Button = styled('button', {
-  border: 'none',
-  outline: 'none',
-  cursor: 'pointer',
   padding: 0,
+  margin: '$xs',
   width: '30px',
   height: '30px',
-  borderRadius: '$circle',
   display: 'flex',
-  justifyContent: 'center',
+  cursor: 'pointer',
   alignItems: 'center',
-  margin: '$xs',
-  background: 'none',
+  borderRadius: '$circle',
+  justifyContent: 'center',
   '&:hover': {
     opacity: '.8'
   }
@@ -33,7 +30,7 @@ function ThemeSwitcher() {
   
   return (
     <Button onClick={onChange}>
-      <img src={theme == 'dark' ? moon : sun} alt="Theme switcher" />
+      <img src={theme == 'dark' ? sun : moon} alt="Theme switcher" />
     </Button>
   );
 }

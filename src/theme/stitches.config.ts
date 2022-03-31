@@ -22,7 +22,11 @@ export const {
       lg: '6rem'
     },
     radii: {
-      circle: '50%'
+      circle: '50%',
+      smooth: '5px'
+    },
+    shadows: {
+      card: 'rgb(72 84 159 / 10%) 0px 10px 10px -10px'
     }
   },
   media: {

@@ -1,10 +1,10 @@
-import Card from './components/Card';
 import Header from './components/Header';
 import { styled } from './theme/stitches.config';
 import { RootState, store } from './redux/Store';
 import { Provider, useSelector } from 'react-redux';
 import DarkTheme from './theme/DarkTheme';
 import LightTheme from './theme/LightTheme';
+import Router from './Router';
 
 const Container = styled('div', {
   display: 'flex',
@@ -36,7 +36,7 @@ function App() {
       <Container className={ theme === 'dark' ? DarkTheme : LightTheme }>
         <Header />
         <Body>
-          <Card />
+          <Router />
         </Body>
       </Container>
     </Provider>

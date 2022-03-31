@@ -4,5 +4,8 @@ export interface ThemeColors {
   
   background: string,
   surface: string,
-  floating: string
+  floating: string,
+
+
+  header: string
 }

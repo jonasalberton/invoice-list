@@ -5,9 +5,11 @@ const lightColors: ThemeColors = {
   primary: '#7c5dfa',
   primaryLight: '#9277ff',
   
-  background: '#141625',
-  surface: '#1e2139',
-  floating: '#252945'
+  background: '#f8f8fb',
+  surface: '#ffffff',
+  floating: '#f9fafe',
+
+  header: 'rgb(55, 59, 83)',
 };
 
 const LightTheme = createTheme({

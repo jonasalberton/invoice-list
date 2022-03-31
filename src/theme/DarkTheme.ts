@@ -2,12 +2,17 @@ import { ThemeColors } from "../models/ThemeColors";
 import { createTheme } from './stitches.config';
 
 const darkColors: ThemeColors = {
+
+
+
   primary: '#7c5dfa',
   primaryLight: '#9277ff',
   
-  background: '#f8f8fb',
-  surface: '#ffffff',
-  floating: '#f9fafe'
+  background: '#141625',
+  surface: '#1e2139',
+  floating: '#252945',
+
+  header: '#1e2139'
 };
 
 const DarkTheme = createTheme({

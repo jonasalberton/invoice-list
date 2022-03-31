@@ -1,6 +1,7 @@
 import logo from '../../assets/logo.svg';
 import ThemeSwitcher from '../ThemeSwitcher';
 import { styled } from '../../theme/stitches.config';
+import Avatar from '../Avatar';
 
 const Container = styled('div', {
   top: 0,
@@ -9,8 +10,7 @@ const Container = styled('div', {
   display: 'flex',
   position: 'sticky',
   alignItems: 'center',
-  background: '$surface',
-  justifyContent: 'space-between',
+  background: '$header',
   '@900bp': {
     width: '6rem',
     height: '100vh',
@@ -27,6 +27,7 @@ const Logo = styled('div', {
   display: 'flex',
   alignSelf: 'start',
   alignItems: 'center',
+  marginRight: 'auto',
   justifyContent: 'center',
   borderRadius: '0 20px 20px 0',
   '&:after': {
@@ -41,6 +42,7 @@ const Logo = styled('div', {
   '@900bp': {
     width: '6rem',
     height: '6rem',
+    marginBottom: 'auto'
   }
 });
 
@@ -56,6 +58,7 @@ function Header() {
     <Container>
       <Logo> <Svg src={logo} /> </Logo>
       <ThemeSwitcher />
+      <Avatar />
     </Container>
   )
 }
