@@ -1,6 +1,11 @@
 import Card from "../../components/Card";
 import { styled } from '../../theme/stitches.config';
 
+const Title = styled('h1',  {
+  color: '$text-color',
+  fontWeight: 'bold'
+})
+
 const List = styled('div', {
   display: 'flex',
   flexDirection: 'column',
@@ -30,9 +35,14 @@ function InvoiceList() {
   ]
   
   return (
-    <List>
-      {list.map(item => <Card> {item} </Card>)}
-    </List>
+    <div>
+      <div>
+        <Title>Invoices</Title>
+      </div>
+      <List>
+        {list.map(item => <Card> {item} </Card>)}
+      </List>
+    </div>
   );
 }
 

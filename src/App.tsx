@@ -20,8 +20,12 @@ const Body = styled('div', {
   flex: '1',
   padding: '$sm',
   display: 'flex',
+  justifyContent: 'center',
   '@900bp': {
     padding: '$md'
+  },
+  '> div': {
+    maxWidth: '700px',
   }
 });
 
