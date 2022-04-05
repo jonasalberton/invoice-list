@@ -1,4 +1,4 @@
-import { styled } from './stitches.config';
+import { styled, css } from './stitches.config';
 
 const LayoutRow = styled('div', {
   display: 'flex',

@@ -39,6 +39,7 @@ export const {
   },
   media: {
     '900bp': '(min-width: 900px)',
+    '700bp': '(min-width: 700px)',
   },
   utils: {
     marginX: (value: any) => ({ marginLeft: value, marginRight: value }),

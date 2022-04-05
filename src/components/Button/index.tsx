@@ -1,8 +1,9 @@
 import { styled } from '../../theme/stitches.config';
 import { isNullOrUndefined } from '../../utils';
+import Icon from '../Icon';
 
 const ButtonElement = styled('button', {
-  padding: '$xs',
+  padding: '$xxs',
   display: 'flex',
   alignItems: 'center',
   gap: '$xxs',
@@ -19,11 +20,6 @@ const ButtonElement = styled('button', {
       neutral: {
         backgroundColor: '$primary',
       }
-    },
-    icon: {
-      true: {
-        padding: '5px 10px 5px 5px'
-      }
     }
   },
   '&:hover': {
@@ -31,10 +27,6 @@ const ButtonElement = styled('button', {
   }
 });
 
-const Icon = styled('img', {
-  width: '35px',
-  height: '35px'
-});
 
 type Props = {
   children: any,
@@ -48,9 +40,9 @@ function Button(props: Props) {
   return (
     <ButtonElement
       onClick={props.onClick}
-      icon={!isNullOrUndefined(props.icon)}
+      // icon={!isNullOrUndefined(props.icon)}
       color={props.color}>
-        <Icon src={props.icon} alt="" />
+        <Icon icon={props.icon} />
       {props.children}
     </ButtonElement>
   );

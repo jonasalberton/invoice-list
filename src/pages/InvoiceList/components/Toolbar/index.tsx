@@ -1,7 +1,7 @@
-import { styled } from '../../../../theme/stitches.config';
-import { LayoutColumn } from '../../../../theme/shared';
-import Button from '../../../../components/Button';
 import add from '../../../../assets/add.svg';
+import Button from '../../../../components/Button';
+import { LayoutColumn } from '../../../../theme/shared';
+import { styled } from '../../../../theme/stitches.config';
 
 const Container = styled('div', {
   marginBottom: '$md',
@@ -19,7 +19,14 @@ const Title = styled('h1',  {
 const InvoiceCount = styled('span', {
   color: '$text-color-dark',
   fontSize: '$sm'
-})
+});
+
+const LongText = styled('span', {
+  display: 'none',
+  '@700bp': {
+    display: 'block'
+  }
+});
 
 
 function Toolbar() {
@@ -37,7 +44,9 @@ function Toolbar() {
   
       filter by status
   
-      <Button icon={add} onClick={goToNewInvoice} color='primary'>New invoice</Button>
+      <Button color='primary' icon={add} onClick={goToNewInvoice}>
+        New <LongText id='long-text'>Invoice</LongText>
+      </Button>
     </Container>
   )
 }
