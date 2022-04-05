@@ -9,6 +9,7 @@ import Router from './Router';
 const Container = styled('div', {
   display: 'flex',
   minHeight: '100vh',
+  color: '$text-color',
   flexDirection: 'column',
   background: '$background',
   "@900bp": {
@@ -18,7 +19,7 @@ const Container = styled('div', {
 
 const Body = styled('div', {
   flex: '1',
-  padding: '$sm',
+  padding: '$md $sm',
   display: 'flex',
   justifyContent: 'center',
   '@900bp': {
