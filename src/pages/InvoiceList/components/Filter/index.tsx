@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import { useEffect, useState } from 'react';
 import { styled } from '../../../../theme/stitches.config';
 
 const Container = styled('div', {
@@ -32,24 +32,18 @@ const MenuElement = styled('div', {
   zIndex: 1,
   top: '45px',
   padding: '$xs',
-  display: 'none',
+  display: 'block',
   boxShadow: '$card',
   position: 'absolute',
   borderRadius: '$smooth',
   background: '$floating',
-  variants: {
-    visible: {
-      true: {
-        display: 'block'
-      }
-    }
-  }
 });
 
 
 type MenuProps = {
   onClose: () => void
 }
+
 
 function Menu({ onClose }: MenuProps) {
 
@@ -73,13 +67,13 @@ function Menu({ onClose }: MenuProps) {
     onClose();
   }
 
-  const handleclickItem = () => {
+  const handleClickItem = () => {
     alert('clicou no item dentro')
   }
 
   return (
-    <MenuElement visible={true}>
-      <span onClick={handleclickItem}>teste de click</span>
+    <MenuElement>
+      <span onClick={handleClickItem}>teste de click</span>
     </MenuElement>
   )
 };
@@ -88,24 +82,29 @@ function Menu({ onClose }: MenuProps) {
 
 
 
+
+
+
+
+
 function Filter() {
   const [visible, setVisible] = useState(false);
 
-  const closeMenu = () => {
+  const toggleMenu = () => {
     setVisible(!visible);
   }
 
   return (
     <Container>
-      <Button onClick={() => setVisible(!visible)}>
+      <Button onClick={toggleMenu}>
         Filter by status
       </Button>
 
-      {visible && <Menu onClose={closeMenu}/>}
+      {visible && <Menu onClose={toggleMenu}/>}
 
       <BackDrop
         visible={visible}
-        onClick={() => setVisible(!visible)}>
+        onClick={toggleMenu}>
       </BackDrop>
     </Container >
   )
