@@ -5,6 +5,7 @@ const GLOBAL_CSS = globalCss({
     'margin': 0,
     overflowX: 'hidden',
     color: '$text-color',
+    fontSize: '$sm',
     fontFamily: 'Spartan, sans-serif',
     transition: 'background 0.3s ease 0s',
     '-webkit-font-smoothing': 'antialiased',

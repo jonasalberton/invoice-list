@@ -2,6 +2,7 @@ import add from '../../../../assets/add.svg';
 import Button from '../../../../components/Button';
 import { LayoutColumn } from '../../../../theme/shared';
 import { styled } from '../../../../theme/stitches.config';
+import Filter from '../Filter';
 
 const Container = styled('div', {
   marginBottom: '$md',
@@ -37,16 +38,18 @@ function Toolbar() {
   
   return (
     <Container>
+
       <LayoutColumn>
         <Title>Invoices</Title>
         <InvoiceCount>The are 7 total invoices</InvoiceCount>
       </LayoutColumn>
-  
-      filter by status
-  
+
+      <Filter></Filter>
+
       <Button color='primary' icon={add} onClick={goToNewInvoice}>
         New <LongText id='long-text'>Invoice</LongText>
       </Button>
+      
     </Container>
   )
 }
