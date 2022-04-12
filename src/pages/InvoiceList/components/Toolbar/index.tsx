@@ -1,8 +1,8 @@
 import add from '../../../../assets/add.svg';
 import Button from '../../../../components/Button';
+import Filter from '../../../../components/Filter/Index';
 import { LayoutColumn } from '../../../../theme/shared';
 import { styled } from '../../../../theme/stitches.config';
-import Filter from '../Filter';
 
 const Container = styled('div', {
   marginBottom: '$md',
