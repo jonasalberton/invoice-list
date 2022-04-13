@@ -3,7 +3,8 @@ import usePressEscape from "../../hooks/usePressEscape";
 import useClickOutside from "../../hooks/useClickOutside";
 import { Container, Button, MenuElement } from './styles';
 import CheckBox from '../CheckBox';
-import expand from '../../assets/expand.svg';
+import { Expand } from '../../assets/icons';
+import Icon from '../Icon';
 
 type MenuProps = {
   onClose: () => void
@@ -44,11 +45,9 @@ function Filter() {
 
   return (
     <Container>
-      <Button onClick={toggleMenu}>
+      <Button onClick={toggleMenu} opened={visible}>
         Filter by status
-        <svg>
-    <use href={expand}></use>
-</svg>
+        <Icon color="primary" icon={Expand}></Icon>
       </Button>
 
       {visible && <Menu onClose={toggleMenu}/>}

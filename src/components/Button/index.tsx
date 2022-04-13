@@ -3,7 +3,7 @@ import Icon from '../Icon';
 
 type Props = {
   children: any,
-  icon: string,
+  icon: JSX.Element,
   onClick: () => void,
   color: 'primary' | 'secondary' | 'neutral',
 }

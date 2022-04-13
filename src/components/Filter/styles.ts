@@ -8,7 +8,23 @@ export const Container = styled('div', {
 });
 
 export const Button = styled('button', {
-  fontWeight: 'bold'
+  fontWeight: 'bold',
+  display: 'flex',
+  alignItems: 'center',
+  gap: '$xxs',
+  justifyContent: 'center',
+  ' > span': {
+    transition: 'transform .3s'
+  },
+  variants: {
+    opened: {
+      true: {
+        ' > span': {
+          transform: 'rotate(180deg)',
+        }
+      }
+    }
+  }
 });
 
 export const MenuElement = styled('div', {

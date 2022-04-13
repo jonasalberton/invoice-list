@@ -1,11 +1,19 @@
+import { IconContainer } from './styles';
+
 type Props = {
-  icon: string
+  icon: JSX.Element,
+  size?: 'md' | 'lg',
+  color?: 'white' | 'primary'
 }
 
 function Icon(props: Props) {
-  
+  const size = props.size || 'md';
+  const color = props.color || 'white';
+
   return (
-    <img src={props.icon} alt="icon" />
+    <IconContainer color={color} size={size}>
+      {props.icon}
+    </IconContainer>
   );
 }
 

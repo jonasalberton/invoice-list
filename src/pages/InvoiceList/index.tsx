@@ -1,4 +1,4 @@
-import add from '../../assets/add.svg';
+import { Add } from '../../assets/icons';
 import { Card, Filter, Button } from '../../components';
 import { LayoutColumn } from '../../theme/shared';
 import { List, ToolBar, Title, InvoiceCount, LongText } from './styles';
@@ -38,7 +38,7 @@ function InvoiceList() {
 
         <Filter></Filter>
 
-        <Button color='primary' icon={add} onClick={goToNewInvoice}>
+        <Button color='primary' icon={Add} onClick={goToNewInvoice}>
           New <LongText id='long-text'>Invoice</LongText>
         </Button>
       </ToolBar>
