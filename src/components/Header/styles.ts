@@ -34,7 +34,7 @@ export const Logo = styled('div', {
     borderRadius: '20px 0',
     position: 'absolute',
     bottom: 0,
-    background: '$primaryLight'
+    background: '$primary-light'
   },
   '@900bp': {
     width: '6rem',

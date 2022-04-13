@@ -1,7 +1,9 @@
-import { useEffect, useRef, useState } from "react";
+import { useRef, useState } from "react";
 import usePressEscape from "../../hooks/usePressEscape";
 import useClickOutside from "../../hooks/useClickOutside";
 import { Container, Button, MenuElement } from './styles';
+import CheckBox from '../CheckBox';
+import expand from '../../assets/expand.svg';
 
 type MenuProps = {
   onClose: () => void
@@ -14,16 +16,14 @@ function Menu({ onClose }: MenuProps) {
     alert('close');
   }
   
-  const handleClickItem = () => {
-    alert('clicou no item dentro')
-  }
-  
   useClickOutside(ref, onClose);
   usePressEscape(close);
 
   return (
     <MenuElement ref={ref}>
-      <span onClick={handleClickItem}>teste de click</span>
+        <CheckBox label="Paid"></CheckBox>
+        <CheckBox label="Pending"></CheckBox>
+        <CheckBox label="Draft"></CheckBox>
     </MenuElement>
   )
 };
@@ -46,6 +46,9 @@ function Filter() {
     <Container>
       <Button onClick={toggleMenu}>
         Filter by status
+        <svg>
+    <use href={expand}></use>
+</svg>
       </Button>
 
       {visible && <Menu onClose={toggleMenu}/>}
