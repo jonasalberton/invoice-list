@@ -1,19 +1,21 @@
 import { Container, GhostInput, Check, Icon} from './styles';
 import { Check as CheckIcon} from '../../assets/icons';
+import { ChangeEvent } from 'react';
 
 type Props = {
-  label: string
+  label: string,
+  onChange: (checked: boolean) => void
 }
 
-function CheckBox({ label }: Props) {
+function CheckBox({ label, onChange }: Props) {
 
-  const handleClick = () => {
-    console.log('change');
+  const handleOnChange = (event: ChangeEvent<HTMLInputElement>) => {
+    onChange(event.target.checked);
   }
   
   return (
     <Container>
-      <GhostInput type="checkbox" onChange={handleClick} />
+      <GhostInput type="checkbox" onChange={handleOnChange} />
       <Check>
         <Icon>{CheckIcon}</Icon>
       </Check>

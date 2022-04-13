@@ -1,10 +1,22 @@
+import { useDispatch, useSelector } from 'react-redux';
 import { Add } from '../../assets/icons';
 import { Card, Filter, Button } from '../../components';
+import { RootState } from '../../redux/Store';
 import { LayoutColumn } from '../../theme/shared';
 import { List, ToolBar, Title, InvoiceCount, LongText } from './styles';
+import { applyFilter } from '../../redux/Reducers/InvoiceListReducer';
+import { InvoiceStatus } from '../../models/Invoice';
 
 function InvoiceList() {
   
+
+  const filter = useSelector((state: RootState) => state.invoice.filter);
+  const dispatch = useDispatch();
+
+  console.log('filter', filter);
+  dispatch(applyFilter(InvoiceStatus.PENDING))
+
+
   const list: string[] = [
     'one',
     'two',

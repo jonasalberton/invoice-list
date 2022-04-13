@@ -5,6 +5,7 @@ import { Container, Button, MenuElement } from './styles';
 import CheckBox from '../CheckBox';
 import { Expand } from '../../assets/icons';
 import Icon from '../Icon';
+import { InvoiceStatus } from "../../models/Invoice";
 
 type MenuProps = {
   onClose: () => void
@@ -16,11 +17,15 @@ function Menu({ onClose }: MenuProps) {
   useClickOutside(ref, onClose);
   usePressEscape(onClose);
 
+  const handleOnChange = () => {
+
+  }
+
   return (
     <MenuElement ref={ref}>
-        <CheckBox label="Paid"></CheckBox>
-        <CheckBox label="Pending"></CheckBox>
-        <CheckBox label="Draft"></CheckBox>
+        <CheckBox onChange={handleOnChange} label="Paid"></CheckBox>
+        <CheckBox onChange={handleOnChange} label="Pending"></CheckBox>
+        <CheckBox onChange={handleOnChange} label="Draft"></CheckBox>
     </MenuElement>
   )
 };
@@ -31,6 +36,10 @@ function Menu({ onClose }: MenuProps) {
 // so the (escape and outSideClick) events will only listen when the menu is opened
 
 
+type FilterProps = {
+  onChangeFilter: (filter: InvoiceStatus) => void,
+  value: InvoiceStatus
+}
 
 function Filter() {
   const [visible, setVisible] = useState(false);
@@ -38,6 +47,10 @@ function Filter() {
   const toggleMenu = () => {
     setVisible(!visible);
   }
+
+  const options = [
+
+  ]
 
   return (
     <Container>

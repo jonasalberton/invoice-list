@@ -1,9 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit';
 import themeReducer from './Reducers/ThemeReducer';
+import invoiceReducer from './Reducers/InvoiceListReducer';
 
 export const store = configureStore({
   reducer: {
-    theme: themeReducer
+    theme: themeReducer,
+    invoice: invoiceReducer
   },
 });
 
