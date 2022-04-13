@@ -10,11 +10,20 @@ export const Container = styled('div', {
 export const Button = styled('button', {
   fontWeight: 'bold',
   display: 'flex',
+  outline: 'none',
   alignItems: 'center',
   gap: '$xxs',
   justifyContent: 'center',
   ' > span': {
     transition: 'transform .3s'
+  },
+  ' > div': {
+    display: 'none'
+  },
+  '@700bp': {
+    ' > div': {
+      display: 'block'
+    }
   },
   variants: {
     opened: {
@@ -30,10 +39,13 @@ export const Button = styled('button', {
 export const MenuElement = styled('div', {
   zIndex: 1,
   top: '45px',
-  padding: '$xs',
-  display: 'block',
-  boxShadow: '$card',
+  gap: '$xs',
+  padding: '$sm',
+  display: 'flex',
+  minWidth: '200px',
+  boxShadow: '$modal',
   position: 'absolute',
-  borderRadius: '$smooth',
+  borderRadius: '$smooth-lg',
+  flexDirection: 'column',
   background: '$floating',
 });

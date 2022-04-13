@@ -1,5 +1,5 @@
 import { Container, GhostInput, Check, Icon} from './styles';
-import check from '../../assets/check.svg';
+import { Check as CheckIcon} from '../../assets/icons';
 
 type Props = {
   label: string
@@ -15,7 +15,7 @@ function CheckBox({ label }: Props) {
     <Container>
       <GhostInput type="checkbox" onChange={handleClick} />
       <Check>
-       <Icon src={check}/>
+        <Icon>{CheckIcon}</Icon>
       </Check>
       {label}
     </Container>

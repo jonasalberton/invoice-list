@@ -14,7 +14,7 @@ export const Check = styled('div', {
 
 export const Container = styled('label', {
   display: 'flex',
-  gap: '$xxs',
+  gap: '$xs',
   fontWeight: 'bold',
   cursor: 'pointer',
   alignItems: 'center',
@@ -23,10 +23,12 @@ export const Container = styled('label', {
   }
 });
 
-export const Icon = styled('img', {
-  width: '14px',
-  height: '14px',
-  display: 'none'
+export const Icon = styled('span', {
+  display: 'none',
+  'svg': {
+    width: '14px',
+    height: '14px',
+  }
 });
 
 export const GhostInput = styled('input', {

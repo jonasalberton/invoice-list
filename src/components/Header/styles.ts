@@ -2,6 +2,7 @@ import { styled } from '../../theme/stitches.config';
 
 export const Container = styled('div', {
   top: 0,
+  zIndex: 10,
   width: '100%',
   height: '5rem',
   display: 'flex',
@@ -16,7 +17,7 @@ export const Container = styled('div', {
   }
 });
 
-export const Logo = styled('div', {
+export const Brand = styled('div', {
   background: '$primary',
   position: 'relative',
   width: '5rem',
@@ -43,7 +44,7 @@ export const Logo = styled('div', {
   }
 });
 
-export const Svg = styled('img', {
+export const BrandIcon = styled('span', {
   zIndex: 1,
   width: '2em',
   height: '2em'

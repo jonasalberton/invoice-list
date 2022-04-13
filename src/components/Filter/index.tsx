@@ -13,12 +13,8 @@ type MenuProps = {
 function Menu({ onClose }: MenuProps) {
   const ref = useRef(null);
   
-  const close = () => {
-    alert('close');
-  }
-  
   useClickOutside(ref, onClose);
-  usePressEscape(close);
+  usePressEscape(onClose);
 
   return (
     <MenuElement ref={ref}>
@@ -46,7 +42,7 @@ function Filter() {
   return (
     <Container>
       <Button onClick={toggleMenu} opened={visible}>
-        Filter by status
+        Filter <div>by status</div>
         <Icon color="primary" icon={Expand}></Icon>
       </Button>
 

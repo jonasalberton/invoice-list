@@ -1,6 +1,5 @@
 import { Button } from './styles';
-import sun from '../../assets/sun.svg';
-import moon from '../../assets/moon.svg'
+import { Sun, Moon } from '../../assets/icons';
 import { RootState } from '../../redux/Store';
 import { useSelector, useDispatch } from 'react-redux';
 import { toggleTheme } from '../../redux/Reducers/ThemeReducer';
@@ -15,7 +14,7 @@ function ThemeSwitcher() {
   
   return (
     <Button onClick={onChange}>
-      <img src={theme == 'dark' ? sun : moon} alt="Theme switcher" />
+      {theme == 'dark' ? Sun : Moon}
     </Button>
   );
 }

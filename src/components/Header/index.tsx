@@ -1,15 +1,16 @@
 import Avatar from '../Avatar';
-import logo from '../../assets/logo.svg';
+import { Logo } from '../../assets/icons';
 import ThemeSwitcher from '../ThemeSwitcher';
-import { Container, Logo, Svg } from './styles';
+import { Container, Brand, BrandIcon } from './styles';
 
 function Header() {
   return (
     <Container>
-      <Logo>
-        {' '}
-        <Svg src={logo} />{' '}
-      </Logo>
+      <Brand>
+        <BrandIcon>
+          {Logo}
+        </BrandIcon>
+      </Brand>
       <ThemeSwitcher />
       <Avatar />
     </Container>

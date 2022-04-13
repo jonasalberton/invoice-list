@@ -25,10 +25,12 @@ export const {
     radii: {
       circle: '50%',
       smooth: '5px',
+      'smooth-lg': '10px',
       pill: '25px'
     },
     shadows: {
-      card: 'rgb(72 84 159 / 10%) 0px 10px 10px -10px'
+      card: 'rgb(72 84 159 / 10%) 0px 10px 10px -10px',
+      modal: 'rgb(0 0 0 / 25%) 0px 10px 20px'
     },
     fontSizes: {
       xs: '.5rem',
