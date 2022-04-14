@@ -10,11 +10,8 @@ import { InvoiceStatus } from '../../models/Invoice';
 function InvoiceList() {
   
 
-  const filter = useSelector((state: RootState) => state.invoice.filter);
   const dispatch = useDispatch();
 
-  console.log('filter', filter);
-  dispatch(applyFilter(InvoiceStatus.PENDING))
 
 
   const list: string[] = [

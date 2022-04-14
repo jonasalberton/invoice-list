@@ -6,5 +6,5 @@ export interface Invoice  {
 export enum InvoiceStatus {
   PAID = 'Paid',
   PENDING = 'Pending',
-  Draft = 'Draf'
+  DRAFT = 'Draf'
 }

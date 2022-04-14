@@ -20,9 +20,9 @@ export const invoiceSlice = createSlice({
   name: 'invoices',
   initialState,
   reducers: {
-    applyFilter: (state, action: PayloadAction<InvoiceStatus>) => {
-      localStorage.setItem(FILTER_KEY, action.payload);
-      state.filter = action.payload;
+    applyFilter: (state, action ) => {
+      localStorage.setItem(FILTER_KEY, action?.payload || '');
+      state.filter = action?.payload;
     },
   },
 })

@@ -1,11 +1,14 @@
+import Icon from '../Icon';
+import CheckBox from '../CheckBox';
 import { useRef, useState } from "react";
+import { Expand } from '../../assets/icons';
+import { Invoice, InvoiceStatus } from "../../models/Invoice";
 import usePressEscape from "../../hooks/usePressEscape";
 import useClickOutside from "../../hooks/useClickOutside";
 import { Container, Button, MenuElement } from './styles';
-import CheckBox from '../CheckBox';
-import { Expand } from '../../assets/icons';
-import Icon from '../Icon';
-import { InvoiceStatus } from "../../models/Invoice";
+import { useDispatch, useSelector } from 'react-redux';
+import { RootState } from '../../redux/Store';
+import { applyFilter } from '../../redux/Reducers/InvoiceListReducer';
 
 type MenuProps = {
   onClose: () => void
@@ -13,19 +16,38 @@ type MenuProps = {
 
 function Menu({ onClose }: MenuProps) {
   const ref = useRef(null);
+  const dispatch = useDispatch();
+  const filter = useSelector((state: RootState) => state.invoice.filter);
   
-  useClickOutside(ref, onClose);
-  usePressEscape(onClose);
+  const handleOnChange = (checked: boolean, value: InvoiceStatus) => {
+    if (checked === false) {
+      dispatch(applyFilter(null));
+      return;
+    }
 
-  const handleOnChange = () => {
-
+    dispatch(applyFilter(value));
   }
+  
+  usePressEscape(onClose);
+  useClickOutside(ref, onClose);
 
   return (
     <MenuElement ref={ref}>
-        <CheckBox onChange={handleOnChange} label="Paid"></CheckBox>
-        <CheckBox onChange={handleOnChange} label="Pending"></CheckBox>
-        <CheckBox onChange={handleOnChange} label="Draft"></CheckBox>
+      <CheckBox 
+        label="Paid"
+        checked={filter === InvoiceStatus.PAID}
+        onChange={(e) => handleOnChange(e, InvoiceStatus.PAID)}
+      />
+      <CheckBox 
+        label="Pending"
+        checked={filter === InvoiceStatus.PENDING}
+        onChange={(e) => handleOnChange(e, InvoiceStatus.PENDING)}
+      />
+      <CheckBox
+        label="Draft"
+        checked={filter === InvoiceStatus.DRAFT}
+        onChange={(e) => handleOnChange(e, InvoiceStatus.DRAFT)}
+      />
     </MenuElement>
   )
 };
@@ -48,9 +70,6 @@ function Filter() {
     setVisible(!visible);
   }
 
-  const options = [
-
-  ]
 
   return (
     <Container>
