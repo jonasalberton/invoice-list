@@ -30,4 +30,32 @@ export const List = styled('div', {
   gap: '$xs',
   display: 'flex',
   flexDirection: 'column',
+});
+
+export const ListItemContainer = styled('div', {
+  display: 'grid',
+  gridTemplateColumns: '4rem 7rem min-content min-content min-content',
+  gridTemplateRows: 'min-content'
+});
+
+export const Id =styled('h2', {
+  fontWeight: 'bold',
 })
+
+export const Total =styled('h1', {
+  fontWeight: 'bold',
+})
+
+export const DueDate =styled('h1', {
+  fontWeight: 'bold',
+})
+
+export const Client =styled('h1', {
+  fontWeight: 'bold',
+  whiteSpace: 'nowrap'
+})
+
+export const Status =styled('h1', {
+  fontWeight: 'bold',
+});
+

@@ -5,7 +5,8 @@ import { RootState } from '../../redux/Store';
 import { LayoutColumn } from '../../theme/shared';
 import { List, ToolBar, Title, InvoiceCount, LongText } from './styles';
 import { applyFilter } from '../../redux/Reducers/InvoiceListReducer';
-import { InvoiceStatus } from '../../models/Invoice';
+import { Invoice, InvoiceStatus } from '../../models/Invoice';
+import ListItem from './ListItem';
 
 function InvoiceList() {
   
@@ -14,23 +15,31 @@ function InvoiceList() {
 
 
 
-  const list: string[] = [
-    'one',
-    'two',
-    'three',
-    'four',
-    'one',
-    'two',
-    'three',
-    'four',
-    'one',
-    'two',
-    'three',
-    'four',
-    'one',
-    'two',
-    'three',
-    'four',
+  const list: Invoice[] = [
+   {
+     id: 'AO5213',
+     status: InvoiceStatus.DRAFT,
+     addreas: {
+       city: '',
+       country: '',
+       postCode: '',
+       street: '',
+     },
+     client: {
+       addreas: {
+        city: '',
+        country: '',
+        postCode: '',
+        street: '',
+       },
+       email: '',
+       name: 'Alex Grim',
+     },
+     dueDate: new Date(),
+     items: [],
+     paymentTerms: '',
+     title: ''
+   }
   ]
 
   const goToNewInvoice = () => {
@@ -50,11 +59,13 @@ function InvoiceList() {
         <Button color='primary' icon={Add} onClick={goToNewInvoice}>
           New <LongText id='long-text'>Invoice</LongText>
         </Button>
+
       </ToolBar>
 
       <List>
-        {list.map(item => <Card> {item} </Card>)}
+        {list.map(invoice => <ListItem invoice={invoice} />)}
       </List>
+
     </LayoutColumn>
   );
 }

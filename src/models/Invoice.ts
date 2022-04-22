@@ -8,7 +8,7 @@ export interface Addreas {
 export interface Client {
   name: string,
   email: string,
-  addres: Addreas
+  addreas: Addreas
 }
 
 export interface InvoiceItem {
@@ -20,11 +20,12 @@ export interface InvoiceItem {
 
 
 export interface Invoice  {
-  id: number,
+  id: string,
   title: string,
+  status: InvoiceStatus,
   addreas: Addreas,
   client: Client,
-  invoiceDate: Date,
+  dueDate: Date,
   paymentTerms: string,
   items: InvoiceItem[]
 }
