@@ -20,6 +20,6 @@ export const Body = styled('div', {
     padding: '$md'
   },
   '> div': {
-    maxWidth: '700px',
+    maxWidth: '1000px',
   }
 });

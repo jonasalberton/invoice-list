@@ -6,7 +6,6 @@ import LightTheme from './theme/LightTheme';
 import { RootState, store } from './redux/Store';
 import { Provider, useSelector } from 'react-redux';
 
-
 function App() {
 
   const theme = useSelector((state: RootState) => state.theme.value );

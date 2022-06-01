@@ -9,6 +9,8 @@ import { Container, Button, MenuElement } from './styles';
 import { useDispatch, useSelector } from 'react-redux';
 import { RootState } from '../../redux/Store';
 import { applyFilter } from '../../redux/Reducers/InvoiceListReducer';
+import { filterOptions } from './options';
+
 
 type MenuProps = {
   onClose: () => void
@@ -33,21 +35,16 @@ function Menu({ onClose }: MenuProps) {
 
   return (
     <MenuElement ref={ref}>
-      <CheckBox 
-        label="Paid"
-        checked={filter === InvoiceStatus.PAID}
-        onChange={(e) => handleOnChange(e, InvoiceStatus.PAID)}
-      />
-      <CheckBox 
-        label="Pending"
-        checked={filter === InvoiceStatus.PENDING}
-        onChange={(e) => handleOnChange(e, InvoiceStatus.PENDING)}
-      />
-      <CheckBox
-        label="Draft"
-        checked={filter === InvoiceStatus.DRAFT}
-        onChange={(e) => handleOnChange(e, InvoiceStatus.DRAFT)}
-      />
+      { filterOptions.map( option => {
+          return (
+            <CheckBox
+              key={option.status}
+              label={option.label}
+              checked={filter === option.status}
+              onChange={(e) => handleOnChange(e, option.status)}
+            />
+          )
+      }) }
     </MenuElement>
   )
 };
@@ -58,18 +55,12 @@ function Menu({ onClose }: MenuProps) {
 // so the (escape and outSideClick) events will only listen when the menu is opened
 
 
-type FilterProps = {
-  onChangeFilter: (filter: InvoiceStatus) => void,
-  value: InvoiceStatus
-}
-
 function Filter() {
   const [visible, setVisible] = useState(false);
 
   const toggleMenu = () => {
     setVisible(!visible);
   }
-
 
   return (
     <Container>
