@@ -28,7 +28,7 @@ function InvoiceList() {
       </ToolBar>
 
       <List>
-        {initialState.map(invoice => <ListItem invoice={invoice} />)}
+        {initialState.map(invoice => <ListItem key={invoice.id} invoice={invoice} />)}
       </List>
 
     </LayoutColumn>
